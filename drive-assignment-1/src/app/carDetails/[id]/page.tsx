@@ -1,5 +1,3 @@
-"use client";
-
 import CarImages from "@/app/components/CarImages";
 import CarInfo from "@/app/components/CarInfo";
 import ListingPanel from "@/app/components/ListingPanel";

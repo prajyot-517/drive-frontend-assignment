@@ -1,32 +1,32 @@
 "use client";
 
 interface CarInfoProps {
-  kilometres?: number;
+  kilometres: number;
   ageOfCar?: number;
-  fuelType?: string;
+  fuelType: string;
   chargeTimeHours?: number;
-  safetyRating?: string;
-  engine?: string;
-  bodyType?: string;
-  rangeKm?: number;
-  warrantyLabel?: string;
-  warrantyRemaining?: string;
-  yearGroup?: number;
-  seriesPublic?: string;
-  driveCode?: string;
-  gearNum?: number;
-  gearTypeDescription?: string;
-  power?: number;
-  torqueRpmFrom?: number;
-  cylinders?: number;
-  engineDescription?: string;
-  fuelDeliveryDescription?: string;
-  inductionDescription?: string;
-  kerbWeight?: number;
-  grossVehicleMass?: number;
-  wheelBase?: number;
-  frontTyreSize?: string;
-  rearTyreSize?: string;
+  safetyRating: string;
+  engine: string;
+  bodyType: string;
+  rangeKm: number;
+  warrantyLabel: string;
+  warrantyRemaining: string;
+  yearGroup: number;
+  seriesPublic: string;
+  driveCode: string;
+  gearNum: number;
+  gearTypeDescription: string;
+  power: number;
+  torqueRpmFrom: number;
+  cylinders: number;
+  engineDescription: string;
+  fuelDeliveryDescription: string;
+  inductionDescription: string;
+  kerbWeight: number;
+  grossVehicleMass: number;
+  wheelBase: number;
+  frontTyreSize: string;
+  rearTyreSize: string;
 }
 
 interface StatTileProps {

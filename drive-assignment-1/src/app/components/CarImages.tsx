@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
+interface CarImage {
+  url: string;
+}
 interface CarImagesProps {
-  images?: { url: string }[];
-  title?: string;
+  images: CarImage[];
+  title: string;
 }
 
 export default function CarImages({

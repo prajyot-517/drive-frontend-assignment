@@ -55,7 +55,7 @@ export default function ListingPanel({
           <span className="text-3xl font-bold text-gray-900">
             {formatPrice(price)}
           </span>
-          {originalPrice && (
+          {originalPrice != null && (
             <span className="text-lg text-gray-400 line-through">
               {formatPrice(originalPrice)}
             </span>
