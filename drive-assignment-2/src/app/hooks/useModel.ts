@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { fetchModels } from "../services/api";
+import { Model } from "../components/ModelCard";
 
 export const useModels = () => {
-  const [models, setModels] = useState<any[]>([]);
+  const [models, setModels] = useState<Model[]>([]);
   const [loading, setLoading] = useState(false);
 
   const getModels = async (make: string) => {

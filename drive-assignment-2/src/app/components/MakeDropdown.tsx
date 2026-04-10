@@ -1,7 +1,9 @@
 "use client";
 
+import { Make } from "../hooks/useMakes";
+
 type DropdownProps = {
-  makes: any[];
+  makes: Make[];
   selected: string;
   onChange: (val: string) => void;
 };
@@ -11,7 +13,7 @@ export default function MakeDropdown({ makes, selected, onChange }: DropdownProp
     <select
       value={selected}
       onChange={(e) => onChange(e.target.value)}
-      className="border p-2 w-full"
+      className="border p-2 w-full rounded-lg"
     >
       <option value="">Select Make</option>
       {makes?.length >0 && makes?.map((m) => (

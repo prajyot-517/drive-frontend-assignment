@@ -1,11 +1,20 @@
-import ModelCard from "./ModelCard";
+import ModelCard, { Model } from "./ModelCard";
+interface ModelListProps {
+  models: Model[];
+  selectedMake: string;
+}
 
-export default function ModelList({ models }: any) {
+export default function ModelList({ models, selectedMake }: ModelListProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-      {models?.lenght >0 && models?.map((model: any, index: number) => (
-        <ModelCard key={index} model={model} />
+    <div className="mt-6 sm:mt-8">
+      <h2 className="text-2xl font-bold mb-4">
+        {selectedMake} Models :
+      </h2>
+      <div className="flex flex-col gap-4">
+      {models?.length >0 && models?.map((model: Model) => (
+        <ModelCard key={model?.Model_ID} model={model} />
       ))}
+      </div>
     </div>
   );
 }
