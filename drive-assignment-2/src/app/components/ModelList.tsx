@@ -7,13 +7,17 @@ interface ModelListProps {
 export default function ModelList({ models, selectedMake }: ModelListProps) {
   return (
     <div className="mt-6 sm:mt-8">
-      <h2 className="text-2xl font-bold mb-4">
-        {selectedMake} Models :
-      </h2>
+      {selectedMake && (
+        <h2 className="text-2xl font-bold mb-4">{selectedMake} Models :</h2>
+      )}
       <div className="flex flex-col gap-4">
-      {models?.map((model: Model) => (
-        <ModelCard key={model?.Model_ID} model={model} />
-      ))}
+        {!models || models?.length === 0 ? (
+          <p className="text-gray-500">No records found.</p>
+        ) : (
+          models?.map((model: Model) => (
+            <ModelCard key={model?.Model_ID} model={model} />
+          ))
+        )}
       </div>
     </div>
   );

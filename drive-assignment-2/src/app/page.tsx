@@ -11,6 +11,8 @@ export default function Home() {
   const { models, loading: modelsLoading, getModels } = useModels();
 
   const [selectedMake, setSelectedMake] = useState("");
+  const [isFetched, setIsFetched] = useState(false);
+  const [fetchedMake, setFetchedMake] = useState("");
 
   return (
       <div className="p-4 sm:p-6 md:p-8 max-w-5xl mx-auto">
@@ -25,14 +27,18 @@ export default function Home() {
               />
             </div>
             <button
-              onClick={() => getModels(selectedMake)}
+              onClick={() => {
+                getModels(selectedMake);
+                setIsFetched(true);
+                setFetchedMake(selectedMake);
+              }}
               className="bg-blue-500 text-white px-4 py-1.5 rounded-lg w-full sm:w-auto"
             >
               Fetch Models
             </button>
           </div>
-        {!modelsLoading && (
-          <ModelList models={models} selectedMake={selectedMake} />
+        {!modelsLoading && isFetched && (
+          <ModelList models={models} selectedMake={fetchedMake} />
         )}
       </div>
   );

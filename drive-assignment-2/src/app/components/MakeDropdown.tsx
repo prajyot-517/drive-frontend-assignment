@@ -15,9 +15,10 @@ export default function MakeDropdown({ makes, selected, onChange, loading }: Dro
       value={selected}
       onChange={(e) => onChange(e.target.value)}
       className="border p-2 w-full rounded-lg"
+      disabled={loading}
     >
       <option value="">
-        {loading ? "Loading makes..." : "Select Make"}
+        Select Make
       </option>
       {!loading && makes?.map((m) => (
         <option key={m?.Make_ID} value={m?.Make_Name}>
