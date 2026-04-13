@@ -11,7 +11,7 @@ export default function ModelList({ models, selectedMake }: ModelListProps) {
         {selectedMake} Models :
       </h2>
       <div className="flex flex-col gap-4">
-      {models?.length >0 && models?.map((model: Model) => (
+      {models?.map((model: Model) => (
         <ModelCard key={model?.Model_ID} model={model} />
       ))}
       </div>

@@ -15,15 +15,13 @@ export default function Home() {
   return (
       <div className="p-4 sm:p-6 md:p-8 max-w-5xl mx-auto">
         <h1 className="text-2xl font-bold mb-4">Makes</h1>
-        {makesLoading ? (
-          <p>Loading makes...</p>
-        ) : (
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="w-full sm:flex-1">
               <MakeDropdown
                 makes={makes}
                 selected={selectedMake}
                 onChange={setSelectedMake}
+                loading={makesLoading}
               />
             </div>
             <button
@@ -33,8 +31,7 @@ export default function Home() {
               Fetch Models
             </button>
           </div>
-        )}
-        {!modelsLoading && models?.length > 0 && (
+        {!modelsLoading && (
           <ModelList models={models} selectedMake={selectedMake} />
         )}
       </div>
