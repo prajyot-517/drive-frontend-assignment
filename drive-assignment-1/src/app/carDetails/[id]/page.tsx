@@ -37,13 +37,11 @@ export default function CarListingPage({ params }: PageProps) {
       >
         ← See similar cars
       </a>
- 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6">
         <CarImages
           images={images}
           title={`${vehicle?.yearGroup ?? ""} ${listing?.make ?? ""} ${listing?.model ?? ""}`.trim()}
         />
- 
         <div className="lg:row-span-1">
           <ListingPanel
             badge={listing?.listingType ?? "NUSED"}
@@ -59,7 +57,6 @@ export default function CarListingPage({ params }: PageProps) {
           />
         </div>
       </div>
- 
       <div className="mt-6">
         <CarInfo
           kilometres={listing?.odometer}
