@@ -33,7 +33,7 @@ export default function CarImages({
     <div className="w-full grid grid-cols-3 gap-2 h-63">
       <div className="relative col-span-2 rounded-2xl overflow-hidden bg-gray-100">
         <Image
-          src={main.url}
+          src={main?.url}
           alt={`${title} - image ${activeIndex + 1}`}
           fill
           className="object-cover transition-all duration-300"
@@ -41,7 +41,7 @@ export default function CarImages({
         />
       </div>
       <div className="grid grid-rows-2 gap-2">
-        {thumbs.slice(1, 3).map((img, i) => (
+        {thumbs?.slice(1, 3).map((img, i) => (
           <div
             key={i + 1}
             onClick={() => setActiveIndex(i + 1)}
@@ -52,7 +52,7 @@ export default function CarImages({
             }`}
           >
             <Image
-              src={img.url}
+              src={img?.url}
               alt={`${title} thumbnail ${i + 2}`}
               fill
               className="object-cover"
